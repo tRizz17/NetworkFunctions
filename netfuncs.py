@@ -155,16 +155,50 @@ def find_router_for_ip(routers, ip):
     return: None
     """
 
-    # TODO -- write me!
-    pass
+    
+    for addr, addr_obj in routers.items():
+        if ips_same_subnet(ip, addr, addr_obj["netmask"]):
+            return addr
+
+    return None
+
 
 # Uncomment this code to have it run instead of the real main.
 # Be sure to comment it back out before you submit!
 
-def my_tests():
-    print("-------------------------------------")
-    print("This is the result of my custom tests")
-    print("-------------------------------------")
+# def my_tests():
+#     print("-------------------------------------")
+#     print("This is the result of my custom tests")
+#     print("-------------------------------------")
+
+#     routers = {
+#         "10.34.98.1": {
+#             "connections": {
+#                 "10.34.166.1": {
+#                     "netmask": "/24",
+#                     "interface": "en0",
+#                     "ad": 70
+#                 },
+#                 "10.34.194.1": {
+#                     "netmask": "/24",
+#                     "interface": "en1",
+#                     "ad": 93
+#                 },
+#                 "10.34.46.1": {
+#                     "netmask": "/24",
+#                     "interface": "en2",
+#                     "ad": 64
+#                 }
+#             },
+#             "netmask": "/24",
+#             "if_count": 3,
+#             "if_prefix": "en"
+#         }
+#     }
+
+#     ip = "10.34.98.3"
+    
+#     print(find_router_for_ip(routers,ip))
 
 
 ## -------------------------------------------
