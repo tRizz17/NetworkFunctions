@@ -96,9 +96,12 @@ def ips_same_subnet(ip1, ip2, slash):
     slash:  "/16"
     return: False
     """
+    ip1_value, ip2_value = ipv4_to_value(ip1), ipv4_to_value(ip2)
+    mask = get_subnet_mask_value(slash)
+    ip1_mask = ip1_value & mask
+    ip2_mask = ip2_value & mask
+    return True if ip1_mask == ip2_mask else False
 
-    # TODO -- write me!
-    pass
 
 def get_network(ip_value, netmask):
     """
@@ -110,9 +113,8 @@ def get_network(ip_value, netmask):
     netmask:  0xffffff00
     return:   0x01020300
     """
-
-    # TODO -- write me!
-    pass
+    network_portion = ip_value & netmask
+    return network_portion
 
 def find_router_for_ip(routers, ip):
     """
@@ -163,7 +165,6 @@ def my_tests():
     print("-------------------------------------")
     print("This is the result of my custom tests")
     print("-------------------------------------")
-
 
 
 ## -------------------------------------------
