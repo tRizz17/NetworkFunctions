@@ -171,35 +171,6 @@ def find_router_for_ip(routers, ip):
 #     print("This is the result of my custom tests")
 #     print("-------------------------------------")
 
-#     routers = {
-#         "10.34.98.1": {
-#             "connections": {
-#                 "10.34.166.1": {
-#                     "netmask": "/24",
-#                     "interface": "en0",
-#                     "ad": 70
-#                 },
-#                 "10.34.194.1": {
-#                     "netmask": "/24",
-#                     "interface": "en1",
-#                     "ad": 93
-#                 },
-#                 "10.34.46.1": {
-#                     "netmask": "/24",
-#                     "interface": "en2",
-#                     "ad": 64
-#                 }
-#             },
-#             "netmask": "/24",
-#             "if_count": 3,
-#             "if_prefix": "en"
-#         }
-#     }
-
-#     ip = "10.34.98.3"
-    
-#     print(find_router_for_ip(routers,ip))
-
 
 ## -------------------------------------------
 ## Do not modify below this line
